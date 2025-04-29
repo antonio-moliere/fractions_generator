@@ -1,0 +1,44 @@
+{% extends "base.html" %} {# Hereda de base.html para tener MathJax y estructura básica #}
+
+{% block title %}Generador de Ejercicios{% endblock %}
+
+{% block content %} {# Define el contenido específico de esta página #}
+<div class="exercise-container">
+    <h3>Resuelve la siguiente operación:</h3>
+    <div class="problem-statement">
+        <p>
+            {# Accede a la clave 'problem_latex' del diccionario 'exercise' #}
+            {# Los $$ indican a MathJax que renderice como matemáticas en display #}
+            $$ {{ exercise.problem_latex }} $$
+        </p>
+    </div>
+
+    <div class="controls">
+        <button id="show-solution-btn">Mostrar Solución</button>
+        {# Este enlace simplemente recarga la página, llamando a la ruta '/' de nuevo #}
+        <a href="{{ url_for('index') }}" class="button">Generar Nuevo Ejercicio</a>
+    </div>
+
+    <div id="solution" style="display: none;"> {# La solución empieza oculta #}
+        <h4>Solución:</h4>
+        <p>
+             {# Accede a la clave 'solution_latex' #}
+             $$ {{ exercise.solution_latex }} $$
+        </p>
+    </div>
+</div>
+
+{# Script simple para el botón de mostrar/ocultar solución #}
+<script>
+    document.getElementById('show-solution-btn').addEventListener('click', function() {
+        var solutionDiv = document.getElementById('solution');
+        if (solutionDiv.style.display === 'none') {
+            solutionDiv.style.display = 'block';
+            this.textContent = 'Ocultar Solución';
+        } else {
+            solutionDiv.style.display = 'none';
+            this.textContent = 'Mostrar Solución';
+        }
+    });
+</script>
+{% endblock %}
