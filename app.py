@@ -57,8 +57,8 @@ def index():
     print(f"Renderizando index.html con exercise_data: {exercise_data}") # Mensaje de depuración
     return render_template('index.html', exercise=exercise_data)
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
     # Asegúrate de que el import funcionó antes de intentar ejecutar
-    if not generator_imported:
-         print("\n!!! No se pudo importar el generador. La aplicación se ejecutará pero mostrará errores. !!!\n")
-    app.run(debug=True)
+#    if not generator_imported:
+#         print("\n!!! No se pudo importar el generador. La aplicación se ejecutará pero mostrará errores. !!!\n")
+#   app.run(debug=True)
