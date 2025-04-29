@@ -1,6 +1,6 @@
 # Generador de Ejercicios de Fracciones Algebraicas
 
-Aplicación web simple construida con Flask y SymPy para generar ejercicios de operaciones combinadas (+, -, *, /) con fracciones algebraicas.
+Aplicación web simple construida con Flask y SymPy para generar ejercicios de operaciones combinadas (+, -, *, /) con fracciones algebraicas. Se ha usado Gemini AI Studio para construir esta app
 
 ## Características
 
